@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+        }
+        input{
+            padding: 5px 5px;
+            width: 60px;
+            height: 60px;
+            font-size: 50px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            border: 2px black solid;
+        }
+        #word2{
+            display:flex;
+            margin-left: 157px;
+            margin-top: 4px;
+            flex-direction: column;
+        }
+        #word2 #a {
+            margin-top: 4px;
+        }
+        #word3{
+            margin-left: 79px;
+            margin-top: -74px;
+        }
+        #word3 #m {
+            margin-left: 78px;
+            /* color: green
+            ; */
+        }
+        #proximo{
+            display: none;
+            align-items: center;
+            flex-direction: column;
+            border: 2px green solid;
+            border-radius: 4px;
+            height: 150px;
+            width: 200px;
+            margin-left: 40%;
+            margin-top: -100px;
+
+        }
+        #proximo button {
+            color: blue;
+            width: 80px;
+            padding: 5px 10px ;
+            border: 2px rgb(161, 199, 26) solid;
+            background-color: yellow;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            pointer-events: none;
+        }
+        #proximo a {
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+<div id="container">
+        <div id="word1">
+            <input onkeyup="verificar()" id="c" maxlength="1" type="text">
+            <input onkeyup="verificar()" id="p" maxlength="1" type="text">
+            <input onkeyup="verificar()" id="u" maxlength="1" type="text">
+        </div>
+        <div id="word2">
+            <input onkeyup="verificar()" id="l" maxlength="1" type="text">
+            <input onkeyup="verificar()" id="a" maxlength="1" type="text"> 
+        </div>
+        <div id="word3">
+            <input onkeyup="verificar()" id="r" maxlength="1" type="text">
+            <input onkeyup="verificar()" id="m" maxlength="1" type="text"> 
+        </div>
+        <div id="proximo">
+            <p>Parabéns</p>
+            <p>Fase concluida</p>
+            <a href="fase2.html"><button>Próxima fase</button></a>
+        </div>
+</div>
+
+</body>
+</html> 
+<script>
+    function verificar(params) {
+    //     if (c.value.length == 1) {
+    //     getElementById(u).focus()
+    // }
+    if (c.value == 'c' && p.value == 'p' && u.value == 'u') {
+       c.style.border = `green solid 2px` 
+       p.style.border = `green solid 2px` 
+       u.style.border = `green solid 2px` 
+    }else {
+       c.style.border = `` 
+       p.style.border = `` 
+       u.style.border = ``  
+    }
+    if (u.value == 'u' && l.value == 'l' && a.value == 'a') {
+       u.style.border = `green solid 2px` 
+       l.style.border = `green solid 2px` 
+       a.style.border = `green solid 2px` 
+    }else {
+    //    u.style.border = `` 
+       l.style.border = `` 
+       a.style.border = ``  
+    }
+    if (r.value == 'r' && a.value == 'a' && m.value == 'm') {
+       r.style.border = `green solid 2px` 
+       a.style.border = `green solid 2px` 
+       m.style.border = `green solid 2px` 
+    }else {
+    //    u.style.border = `` 
+       r.style.border = `` 
+       m.style.border = ``  
+    }
+    if (c.value == 'c' && p.value == 'p' && u.value == 'u' && l.value == 'l' && a.value == 'a' && r.value == 'r' && m.value == 'm') {
+        proximo.style.display = `flex`
+    }
+}
+</script>
